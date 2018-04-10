@@ -1,9 +1,9 @@
 //
 //  RemoteCachingBlobStoreTests.swift
-//  ShoeboxTests
+//  BlobStoreTests
 //
-//  Created by Ben Kennedy on 2018-02-07.
-//  Copyright © 2018 Kashoo Cloud Accounting Inc. All rights reserved.
+//  Copyright 2013 Kashoo Cloud Accounting Inc.
+//  Copyright 2018 Kashoo Systems Inc.
 //
 
 import XCTest

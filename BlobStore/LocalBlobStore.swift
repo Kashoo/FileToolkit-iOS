@@ -1,9 +1,9 @@
 //
 //  LocalBlobStore.swift
-//  Shoebox
+//  BlobStore
 //
-//  Created by Ben Kennedy on 2018-01-19. Ported from the Kashoo-iPad Blob Store suite originally created in 2013.
-//  Copyright © 2018 Kashoo Cloud Accounting Inc. All rights reserved.
+//  Copyright 2013 Kashoo Cloud Accounting Inc.
+//  Copyright 2018 Kashoo Systems Inc.
 //
 
 import Foundation
