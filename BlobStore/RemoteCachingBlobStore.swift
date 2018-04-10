@@ -8,7 +8,7 @@
 
 import Alamofire
 
-class RemoteCachingBlobStore: RemoteBlobStore {
+public class RemoteCachingBlobStore: RemoteBlobStore {
 
     // This is the name of a filesystem extended attribute in which we store the source data's MIME type.
     let kLastAccessDateXattrName = "com.kashoo.LastAccessDate"
@@ -32,13 +32,12 @@ class RemoteCachingBlobStore: RemoteBlobStore {
     ///    - cacheDirectoryURL: A local URL for a directory to use as the local download cache. Will be created if not already extant.
     ///    - cachePruningInterval: The repeating duty cycle at which to conduct a cache cleanup, or 0 to disable automatic pruning.
     ///
-    init(sessionManager: SessionManager,
-         remoteStoreBaseURL: URL,
-         cacheDirectoryURL: URL,
-         cachePruningInterval: TimeInterval)
-    {
+    public init(sessionManager: SessionManager,
+                remoteStoreBaseURL: URL,
+                cacheDirectoryURL: URL,
+                cachePruningInterval: TimeInterval) {
         localCacheBlobStore = LocalBlobStore(storeDirectoryURL: cacheDirectoryURL)
-
+        
         super.init(sessionManager: sessionManager, baseURL: remoteStoreBaseURL)
 
         if (cachePruningInterval > 0) {
@@ -55,7 +54,7 @@ class RemoteCachingBlobStore: RemoteBlobStore {
     // a) testing of the network round-trip,
     // b) more efficient file movement (from local -> remote caches) when managed/implemented by SmartBlobStore.
 
-    override func fetchData(for blobIdentifier: String) -> Data? {
+    public override func fetchData(for blobIdentifier: String) -> Data? {
         guard let data = localCacheBlobStore.fetchData(for: blobIdentifier) else {
             return nil
         }
@@ -63,8 +62,8 @@ class RemoteCachingBlobStore: RemoteBlobStore {
         return data
     }
     
-    override func fetchData(for blobIdentifier: String,
-                            completion: @escaping (Data?, Error?) -> ()) {
+    public override func fetchData(for blobIdentifier: String,
+                                   completion: @escaping (Data?, Error?) -> ()) {
         // First, attempt to obtain the blob from the cache.
         guard let data = fetchData(for: blobIdentifier) else {
             // Schedule a retrieval over the network by calling our sibling URL-based method.
@@ -78,7 +77,7 @@ class RemoteCachingBlobStore: RemoteBlobStore {
         completion(data, nil)
     }
     
-    override func fetchURL(for blobIdentifier: String) -> URL? {
+    public override func fetchURL(for blobIdentifier: String) -> URL? {
         guard let url = localCacheBlobStore.fetchURL(for: blobIdentifier) else {
             return nil
         }
@@ -86,8 +85,8 @@ class RemoteCachingBlobStore: RemoteBlobStore {
         return url
     }
     
-    override func fetchURL(for blobIdentifier: String,
-                           completion: @escaping (URL?, Error?) -> ()) {
+    public override func fetchURL(for blobIdentifier: String,
+                                  completion: @escaping (URL?, Error?) -> ()) {
         // First, attempt to obtain the blob from the cache.
         if let url = fetchURL(for: blobIdentifier) {
             completion(url, nil)
@@ -127,12 +126,12 @@ class RemoteCachingBlobStore: RemoteBlobStore {
         }
     }
     
-    override func metadata(for blobIdentifier: String) -> BlobMetadata? {
+    public override func metadata(for blobIdentifier: String) -> BlobMetadata? {
         return localCacheBlobStore.metadata(for: blobIdentifier)
     }
     
-    override func metadata(for blobIdentifier: String,
-                           completion: @escaping (BlobMetadata?, Error?) -> ()) {
+    public override func metadata(for blobIdentifier: String,
+                                  completion: @escaping (BlobMetadata?, Error?) -> ()) {
         guard let metadata = localCacheBlobStore.metadata(for: blobIdentifier) else {
             super.metadata(for: blobIdentifier, completion: completion)
             return
@@ -140,12 +139,12 @@ class RemoteCachingBlobStore: RemoteBlobStore {
         completion(metadata, nil)
     }
 
-    override func delete(_ blobIdentifier: String) throws {
+    public override func delete(_ blobIdentifier: String) throws {
         try super.delete(blobIdentifier)
         try localCacheBlobStore.delete(blobIdentifier)
     }
     
-    override func shutDown(immediately: Bool) {
+    public override func shutDown(immediately: Bool) {
         periodicPruneTimer?.invalidate()
         localCacheBlobStore.shutDown(immediately: immediately)
         super.shutDown(immediately: immediately)

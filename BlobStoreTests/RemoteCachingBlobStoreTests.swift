@@ -7,8 +7,9 @@
 //
 
 import XCTest
+import Alamofire
 import Mockingjay
-@testable import Shoebox
+@testable import BlobStore
 
 class RemoteCachingBlobStoreTests: XCTestCase {
     
@@ -16,9 +17,8 @@ class RemoteCachingBlobStoreTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let baseURL = URL(string: "http://blobstore.example.com")!
-        blobStore = RemoteCachingBlobStore(sessionManager: SessionManager(baseURL: baseURL),
-                                           remoteStoreBaseURL: baseURL,
+        blobStore = RemoteCachingBlobStore(sessionManager: SessionManager(),
+                                           remoteStoreBaseURL: URL(string: "http://blobstore.example.com")!,
                                            cacheDirectoryURL: URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("blob.test.remote"),
                                            cachePruningInterval: 0)
         

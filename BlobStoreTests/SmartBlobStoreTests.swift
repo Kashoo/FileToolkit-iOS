@@ -8,7 +8,8 @@
 
 import XCTest
 import Mockingjay
-@testable import Shoebox
+import Alamofire
+@testable import BlobStore
 
 class SmartBlobStoreTests: XCTestCase {
     
@@ -18,11 +19,10 @@ class SmartBlobStoreTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let baseURL = URL(string: "http://blobstore.example.com")!
-        blobStore = SmartBlobStore(sessionManager: SessionManager(baseURL: baseURL),
+        blobStore = SmartBlobStore(sessionManager: SessionManager(),
                                    localQueueDirectory: URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("blob.test.local"),
                                    remoteCacheDirectory: URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("blob.test.remote"),
-                                   remoteStoreBaseURL: baseURL,
+                                   remoteStoreBaseURL: URL(string: "http://blobstore.example.com")!,
                                    cachePruningInterval: 0) // disable automatic pruning so that we can exercise it manually.
 
         // Disable asynchronous remote storage so that we can properly control the life cycle of operations for the tests.

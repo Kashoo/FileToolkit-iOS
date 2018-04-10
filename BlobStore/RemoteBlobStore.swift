@@ -8,23 +8,24 @@
 
 import Alamofire
 
-class RemoteBlobStore: BlobStore {
+public class RemoteBlobStore: BlobStore {
 
     let sessionManager: SessionManager
     let baseURL: URL
     
-    init(sessionManager: SessionManager, baseURL: URL) {
+    public init(sessionManager: SessionManager,
+                baseURL: URL) {
         self.sessionManager = sessionManager
         self.baseURL = baseURL
     }
 
     // MARK: - BlobStore protocol
 
-    func store(_ blobIdentifier: String,
-               data: Data,
-               filename: String,
-               mimeType: String,
-               completion: @escaping (Bool, Error?)->()) {
+    public func store(_ blobIdentifier: String,
+                      data: Data,
+                      filename: String,
+                      mimeType: String,
+                      completion: @escaping (Bool, Error?)->()) {
         self.store(formData: { formData in
             formData.append(data,
                             withName: "file",
@@ -34,12 +35,11 @@ class RemoteBlobStore: BlobStore {
                    blobIdentifier: blobIdentifier, filename: filename, mimeType: mimeType, completion: completion)
     }
         
-    func store(_ blobIdentifier: String,
-               contentsOf url: URL,
-               filename: String,
-               mimeType: String,
-               completion: @escaping (Bool, Error?)->())
-    {
+    public func store(_ blobIdentifier: String,
+                      contentsOf url: URL,
+                      filename: String,
+                      mimeType: String,
+                      completion: @escaping (Bool, Error?)->()) {
         self.store(formData: { formData in
             formData.append(url,
                             withName: "file",
@@ -49,13 +49,13 @@ class RemoteBlobStore: BlobStore {
                    blobIdentifier: blobIdentifier, filename: filename, mimeType: mimeType, completion: completion)
     }
         
-    func fetchData(for blobIdentifier: String) -> Data? {
+    public func fetchData(for blobIdentifier: String) -> Data? {
         // Since this is a cacheless network service, these data will never be available immediately; the asynchronous counterpart should be used.
         return nil
     }
 
-    func fetchData(for blobIdentifier: String,
-                   completion: @escaping (Data?, Error?) -> ()) {
+    public func fetchData(for blobIdentifier: String,
+                          completion: @escaping (Data?, Error?) -> ()) {
         sessionManager.request(baseURL.appendingPathComponent(blobIdentifier),
                                method: .get)
             .responseData { response in
@@ -63,22 +63,22 @@ class RemoteBlobStore: BlobStore {
         }
     }
 
-    func fetchURL(for blobIdentifier: String) -> URL? {
+    public func fetchURL(for blobIdentifier: String) -> URL? {
         preconditionFailure("We deal in network data only; use the Data-based API.")
     }
 
-    func fetchURL(for blobIdentifier: String,
+    public func fetchURL(for blobIdentifier: String,
                completion: @escaping (URL?, Error?) -> ()) {
         preconditionFailure("We deal in network data only; use the Data-based API.")
     }
     
-    func metadata(for blobIdentifier: String) -> BlobMetadata? {
+    public func metadata(for blobIdentifier: String) -> BlobMetadata? {
         // Since this is a cacheless network service, these data will never be available immediately; the asynchronous counterpart should be used.
         return nil
     }
     
-    func metadata(for blobIdentifier: String,
-                  completion: @escaping (BlobMetadata?, Error?) -> ()) {
+    public func metadata(for blobIdentifier: String,
+                         completion: @escaping (BlobMetadata?, Error?) -> ()) {
         sessionManager.request(baseURL.appendingPathComponent(blobIdentifier),
                                method: .head)
             .responseJSON { (response) in
@@ -97,11 +97,11 @@ class RemoteBlobStore: BlobStore {
         }
     }
     
-    func delete(_ blobIdentifier: String) throws {
+    public func delete(_ blobIdentifier: String) throws {
         preconditionFailure("Remote deletion is not implemented; \(blobIdentifier) will persist.")
     }
 
-    func shutDown(immediately: Bool) {
+    public func shutDown(immediately: Bool) {
         if immediately {
             sessionManager.session.invalidateAndCancel()
         }
@@ -113,9 +113,7 @@ class RemoteBlobStore: BlobStore {
                        blobIdentifier: String,
                        filename: String,
                        mimeType: String,
-                       completion: @escaping (Bool, Error?)->())
-    {
-        
+                       completion: @escaping (Bool, Error?)->()) {
         sessionManager.upload(multipartFormData: formData,
                               to: baseURL.appendingPathComponent(blobIdentifier)) { (encodingResult) in
                                 switch encodingResult {

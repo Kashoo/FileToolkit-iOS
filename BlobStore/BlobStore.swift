@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct BlobMetadata {
+public struct BlobMetadata {
     var size: Int
     var filename: String
     var mimeType: String
 }
 
-protocol BlobStore {
+public protocol BlobStore {
 
     /// Asynchronously store the payload for a blob.
     ///

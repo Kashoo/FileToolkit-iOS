@@ -8,7 +8,7 @@
 
 import Alamofire
 
-class SmartBlobStore: BlobStore {
+public class SmartBlobStore: BlobStore {
 
     // These notifications are posted when a deferred store to the remote blob store fails for an unexpected reason.
     static let kRemoteUploadFailedNotificationName = Notification.Name(rawValue: "SmartAttachmentBlobStoreRemoteUploadFailedNotification")
@@ -35,12 +35,11 @@ class SmartBlobStore: BlobStore {
     ///    - remoteStoreBaseURL: A remote URL pointing to the remote blob store server.
     ///    - cachePruningInterval: The repeating duty cycle at which to conduct a remote cache cleanup, or 0 to disable automatic pruning. Default is 1800 (30 minutes).
     ///
-    init(sessionManager: SessionManager,
-         localQueueDirectory: URL,
-         remoteCacheDirectory: URL,
-         remoteStoreBaseURL: URL,
-         cachePruningInterval: TimeInterval = (30 * 60))
-    {
+    public init(sessionManager: SessionManager,
+                localQueueDirectory: URL,
+                remoteCacheDirectory: URL,
+                remoteStoreBaseURL: URL,
+                cachePruningInterval: TimeInterval = (30 * 60)) {
         self.localBlobStore = LocalBlobStore(storeDirectoryURL: localQueueDirectory)
         self.remoteBlobStore = RemoteCachingBlobStore(sessionManager: sessionManager,
                                                       remoteStoreBaseURL: remoteStoreBaseURL,
@@ -52,11 +51,11 @@ class SmartBlobStore: BlobStore {
 
     // MARK: - BlobStore protocol
 
-    func store(_ blobIdentifier: String,
-               data: Data,
-               filename: String,
-               mimeType: String,
-               completion: @escaping (Bool, Error?) -> ()) {
+    public func store(_ blobIdentifier: String,
+                      data: Data,
+                      filename: String,
+                      mimeType: String,
+                      completion: @escaping (Bool, Error?) -> ()) {
         localBlobStore.store(blobIdentifier,
                              data: data,
                              filename: filename,
@@ -65,11 +64,11 @@ class SmartBlobStore: BlobStore {
                                                                     clientCompletion: completion))
     }
 
-    func store(_ blobIdentifier: String,
-               contentsOf url: URL,
-               filename: String,
-               mimeType: String,
-               completion: @escaping (Bool, Error?) -> ()) {
+    public func store(_ blobIdentifier: String,
+                      contentsOf url: URL,
+                      filename: String,
+                      mimeType: String,
+                      completion: @escaping (Bool, Error?) -> ()) {
         localBlobStore.store(blobIdentifier,
                              contentsOf: url,
                              filename: filename,
@@ -78,15 +77,15 @@ class SmartBlobStore: BlobStore {
                                                                     clientCompletion: completion))
     }
     
-    func fetchData(for blobIdentifier: String) -> Data? {
+    public func fetchData(for blobIdentifier: String) -> Data? {
         guard let data = localBlobStore.fetchData(for: blobIdentifier) else {
             return remoteBlobStore.fetchData(for: blobIdentifier)
         }
         return data
     }
     
-    func fetchData(for blobIdentifier: String,
-                   completion: @escaping (Data?, Error?) -> ()) {
+    public func fetchData(for blobIdentifier: String,
+                          completion: @escaping (Data?, Error?) -> ()) {
         guard let data = fetchData(for: blobIdentifier) else {
             remoteBlobStore.fetchData(for: blobIdentifier, completion: completion)
             return
@@ -94,14 +93,14 @@ class SmartBlobStore: BlobStore {
         completion(data, nil)
     }
     
-    func fetchURL(for blobIdentifier: String) -> URL? {
+    public func fetchURL(for blobIdentifier: String) -> URL? {
         guard let url = localBlobStore.fetchURL(for: blobIdentifier) else {
             return remoteBlobStore.fetchURL(for: blobIdentifier)
         }
         return url
     }
     
-    func fetchURL(for blobIdentifier: String,
+    public func fetchURL(for blobIdentifier: String,
                   completion: @escaping (URL?, Error?) -> ()) {
         guard let url = fetchURL(for: blobIdentifier) else {
             remoteBlobStore.fetchURL(for: blobIdentifier, completion: completion)
@@ -110,15 +109,15 @@ class SmartBlobStore: BlobStore {
         completion(url, nil)
     }
     
-    func metadata(for blobIdentifier: String) -> BlobMetadata? {
+    public func metadata(for blobIdentifier: String) -> BlobMetadata? {
         guard let metadata = localBlobStore.metadata(for: blobIdentifier) else {
             return remoteBlobStore.metadata(for: blobIdentifier)
         }
         return metadata
     }
 
-    func metadata(for blobIdentifier: String,
-                  completion: @escaping (BlobMetadata?, Error?) -> ()) {
+    public func metadata(for blobIdentifier: String,
+                         completion: @escaping (BlobMetadata?, Error?) -> ()) {
         guard let metadata = localBlobStore.metadata(for: blobIdentifier) else {
             remoteBlobStore.metadata(for: blobIdentifier, completion: completion)
             return
@@ -126,13 +125,13 @@ class SmartBlobStore: BlobStore {
         completion(metadata, nil)
     }
     
-    func delete(_ blobIdentifier: String) throws {
+    public func delete(_ blobIdentifier: String) throws {
         for blobStore in [localBlobStore, remoteBlobStore] as [BlobStore] {
             try blobStore.delete(blobIdentifier)
         }
     }
     
-    func shutDown(immediately: Bool) {
+    public func shutDown(immediately: Bool) {
         for blobStore in [localBlobStore, remoteBlobStore] as [BlobStore] {
             blobStore.shutDown(immediately: immediately)
         }
@@ -140,7 +139,7 @@ class SmartBlobStore: BlobStore {
 
     // MARK: - Private utilities
     
-    func uploadAllLocalBlobs() {
+    private func uploadAllLocalBlobs() {
         for blobIdentifier in localBlobStore.allBlobIdentifiers {
             uploadLocalBlobToRemote(blobIdentifier: blobIdentifier, completion: nil)
         }

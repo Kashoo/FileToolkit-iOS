@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LocalBlobStore: BlobStore {
+public class LocalBlobStore: BlobStore {
 
     // These are the names of filesystem extended attributes in which we store the source blob's metadata.
     static let kMimeTypeXattrName = "com.kashoo.MIMEType"; // MIME type
@@ -16,7 +16,7 @@ class LocalBlobStore: BlobStore {
 
     let storeDirectoryURL: URL
     
-    init(storeDirectoryURL: URL) {
+    public init(storeDirectoryURL: URL) {
         self.storeDirectoryURL = storeDirectoryURL
         
         // Create the directory if it doesn't exist.
@@ -28,11 +28,11 @@ class LocalBlobStore: BlobStore {
 
     // MARK: - BlobStore protocol
 
-    func store(_ blobIdentifier: String,
-               contentsOf url: URL,
-               filename: String,
-               mimeType: String,
-               completion: @escaping (Bool, Error?) -> ()) {
+    public func store(_ blobIdentifier: String,
+                      contentsOf url: URL,
+                      filename: String,
+                      mimeType: String,
+                      completion: @escaping (Bool, Error?) -> ()) {
         store(blobIdentifier: blobIdentifier,
               filename: filename,
               mimeType: mimeType,
@@ -41,11 +41,11 @@ class LocalBlobStore: BlobStore {
         }, completion: completion)
     }
         
-    func store(_ blobIdentifier: String,
-               data: Data,
-               filename: String,
-               mimeType: String,
-               completion: @escaping (Bool, Error?) -> ()) {
+    public func store(_ blobIdentifier: String,
+                      data: Data,
+                      filename: String,
+                      mimeType: String,
+                      completion: @escaping (Bool, Error?) -> ()) {
         store(blobIdentifier: blobIdentifier,
               filename: filename,
               mimeType: mimeType,
@@ -54,7 +54,7 @@ class LocalBlobStore: BlobStore {
         }, completion: completion)
     }
     
-    func fetchData(for blobIdentifier: String) -> Data? {
+    public func fetchData(for blobIdentifier: String) -> Data? {
         guard let url = fetchURL(for: blobIdentifier),
             let data = try? Data(contentsOf: url) else {
                 return nil
@@ -62,23 +62,23 @@ class LocalBlobStore: BlobStore {
         return data
     }
     
-    func fetchData(for blobIdentifier: String,
+    public func fetchData(for blobIdentifier: String,
                    completion: @escaping (Data?, Error?) -> ()) {
         completion(fetchData(for: blobIdentifier), nil)
     }
     
-    func fetchURL(for blobIdentifier: String) -> URL? {
+    public func fetchURL(for blobIdentifier: String) -> URL? {
         // Contract states that we return a URL only for a file that exists.
         let url = nominalFileURL(for: blobIdentifier)
         return FileManager.default.fileExists(atPath: url.path) ? url : nil
     }
     
-    func fetchURL(for blobIdentifier: String,
-                  completion: @escaping (URL?, Error?) -> ()) {
+    public func fetchURL(for blobIdentifier: String,
+                         completion: @escaping (URL?, Error?) -> ()) {
         completion(fetchURL(for: blobIdentifier), nil)
     }
     
-    func metadata(for blobIdentifier: String) -> BlobMetadata? {
+    public func metadata(for blobIdentifier: String) -> BlobMetadata? {
         guard let attribs = try? FileManager.default.attributesOfItem(atPath: nominalFileURL(for: blobIdentifier).path),
             let size = attribs[.size] as? Int,
             let filename: String = (try? fileAttribute(LocalBlobStore.kFilenameXattrName, for: blobIdentifier)) ?? nil,
@@ -91,16 +91,16 @@ class LocalBlobStore: BlobStore {
                             mimeType: mimeType)
     }
     
-    func metadata(for blobIdentifier: String,
+    public func metadata(for blobIdentifier: String,
                   completion: @escaping (BlobMetadata?, Error?) -> ()) {
         completion(metadata(for: blobIdentifier), nil)
     }
     
-    func delete(_ blobIdentifier: String) throws {
+    public func delete(_ blobIdentifier: String) throws {
         try FileManager.default.removeItem(at: nominalFileURL(for: blobIdentifier))
     }
 
-    func shutDown(immediately: Bool) {
+    public func shutDown(immediately: Bool) {
         // Nothing to do.
     }
 

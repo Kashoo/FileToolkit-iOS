@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Shoebox
+@testable import BlobStore
 
 class LocalBlobStoreTests: XCTestCase {
 
