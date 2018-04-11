@@ -17,6 +17,9 @@
 		B5A5353F207D44C000D9E3D2 /* LocalBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353C207D44BF00D9E3D2 /* LocalBlobStoreTests.swift */; };
 		B5A53540207D44C000D9E3D2 /* SmartBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */; };
 		B5A53541207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */; };
+		B5A53549207E9AE000D9E3D2 /* DataEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */; };
+		B5A5354A207E9AE000D9E3D2 /* DataDecryptor.sh in Resources */ = {isa = PBXBuildFile; fileRef = B5A53547207E9AE000D9E3D2 /* DataDecryptor.sh */; };
+		B5A5354B207E9AE000D9E3D2 /* DataEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A53548207E9AE000D9E3D2 /* DataEncryptor.m */; };
 		EF2F1C42A4601E200D7B7534 /* Pods_BlobStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B57FDB199D9580B7088531 /* Pods_BlobStoreTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartBlobStoreTests.swift; sourceTree = "<group>"; };
 		B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteCachingBlobStoreTests.swift; sourceTree = "<group>"; };
 		B5A53544207D7CDA00D9E3D2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEncryptor.h; sourceTree = "<group>"; };
+		B5A53547207E9AE000D9E3D2 /* DataDecryptor.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = DataDecryptor.sh; sourceTree = "<group>"; };
+		B5A53548207E9AE000D9E3D2 /* DataEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEncryptor.m; sourceTree = "<group>"; };
 		E6CFCD4988E7E9FDA951BD00 /* Pods-BlobStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStoreTests/Pods-BlobStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		F26A12A7E043C43FEE20D064 /* Pods-BlobStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStore/Pods-BlobStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +94,7 @@
 				B5A53544207D7CDA00D9E3D2 /* LICENSE */,
 				B59F1CE2207C2E2900B16220 /* BlobStore */,
 				B59F1CED207C2E2900B16220 /* BlobStoreTests */,
+				B5A53545207E9AE000D9E3D2 /* DataEncryptor */,
 				B59F1CE1207C2E2900B16220 /* Products */,
 				CD8D23832A4F55BE57120722 /* Pods */,
 				12695F2368FA2346899EF82A /* Frameworks */,
@@ -127,6 +134,16 @@
 			path = BlobStoreTests;
 			sourceTree = "<group>";
 		};
+		B5A53545207E9AE000D9E3D2 /* DataEncryptor */ = {
+			isa = PBXGroup;
+			children = (
+				B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */,
+				B5A53548207E9AE000D9E3D2 /* DataEncryptor.m */,
+				B5A53547207E9AE000D9E3D2 /* DataDecryptor.sh */,
+			);
+			path = DataEncryptor;
+			sourceTree = "<group>";
+		};
 		CD8D23832A4F55BE57120722 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +162,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A53549207E9AE000D9E3D2 /* DataEncryptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A5354A207E9AE000D9E3D2 /* DataDecryptor.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +335,7 @@
 				B59F1D00207D3CD200B16220 /* RemoteBlobStore.swift in Sources */,
 				B59F1D02207D3CD200B16220 /* BlobStore.swift in Sources */,
 				B59F1CFF207D3CD200B16220 /* SmartBlobStore.swift in Sources */,
+				B5A5354B207E9AE000D9E3D2 /* DataEncryptor.m in Sources */,
 				B59F1D03207D3CD200B16220 /* RemoteCachingBlobStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
