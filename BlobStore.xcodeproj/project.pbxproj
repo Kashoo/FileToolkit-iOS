@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B331E76A45A50FFC94E18406 /* Pods_BlobStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24798EC5FB474A994945D150 /* Pods_BlobStore.framework */; };
+		B545EF26207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B545EF25207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h */; };
 		B59F1CEA207C2E2900B16220 /* BlobStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F1CE0207C2E2900B16220 /* BlobStore.framework */; };
 		B59F1CFF207D3CD200B16220 /* SmartBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFA207D3CD100B16220 /* SmartBlobStore.swift */; };
 		B59F1D00207D3CD200B16220 /* RemoteBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFB207D3CD100B16220 /* RemoteBlobStore.swift */; };
@@ -17,9 +18,12 @@
 		B5A5353F207D44C000D9E3D2 /* LocalBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353C207D44BF00D9E3D2 /* LocalBlobStoreTests.swift */; };
 		B5A53540207D44C000D9E3D2 /* SmartBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */; };
 		B5A53541207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */; };
-		B5A53549207E9AE000D9E3D2 /* DataEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */; };
+		B5A53549207E9AE000D9E3D2 /* DataEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5A5354A207E9AE000D9E3D2 /* DataDecryptor.sh in Resources */ = {isa = PBXBuildFile; fileRef = B5A53547207E9AE000D9E3D2 /* DataDecryptor.sh */; };
 		B5A5354B207E9AE000D9E3D2 /* DataEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A53548207E9AE000D9E3D2 /* DataEncryptor.m */; };
+		B5A53552207EC1FD00D9E3D2 /* encrypt_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5A53550207EC1FD00D9E3D2 /* encrypt_private_key.pem */; };
+		B5A53553207EC1FD00D9E3D2 /* encrypt_public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = B5A53551207EC1FD00D9E3D2 /* encrypt_public_key.der */; };
+		B5A53555207EC22C00D9E3D2 /* DataEncryptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A53554207EC22C00D9E3D2 /* DataEncryptorTests.swift */; };
 		EF2F1C42A4601E200D7B7534 /* Pods_BlobStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B57FDB199D9580B7088531 /* Pods_BlobStoreTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +42,7 @@
 		24798EC5FB474A994945D150 /* Pods_BlobStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlobStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B57FDB199D9580B7088531 /* Pods_BlobStoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlobStoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7479CB41E87A2F544B7F5 /* Pods-BlobStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStoreTests/Pods-BlobStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B545EF25207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlobStore-Bridging-Header.h"; sourceTree = "<group>"; };
 		B59F1CE0207C2E2900B16220 /* BlobStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlobStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F1CE4207C2E2900B16220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59F1CE9207C2E2900B16220 /* BlobStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlobStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +59,9 @@
 		B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEncryptor.h; sourceTree = "<group>"; };
 		B5A53547207E9AE000D9E3D2 /* DataDecryptor.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = DataDecryptor.sh; sourceTree = "<group>"; };
 		B5A53548207E9AE000D9E3D2 /* DataEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEncryptor.m; sourceTree = "<group>"; };
+		B5A53550207EC1FD00D9E3D2 /* encrypt_private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = encrypt_private_key.pem; sourceTree = "<group>"; };
+		B5A53551207EC1FD00D9E3D2 /* encrypt_public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = encrypt_public_key.der; sourceTree = "<group>"; };
+		B5A53554207EC22C00D9E3D2 /* DataEncryptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncryptorTests.swift; sourceTree = "<group>"; };
 		E6CFCD4988E7E9FDA951BD00 /* Pods-BlobStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStoreTests/Pods-BlobStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		F26A12A7E043C43FEE20D064 /* Pods-BlobStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStore/Pods-BlobStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B59F1CE4207C2E2900B16220 /* Info.plist */,
+				B545EF25207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h */,
 				B59F1CFD207D3CD100B16220 /* BlobStore.swift */,
 				B59F1CFC207D3CD100B16220 /* LocalBlobStore.swift */,
 				B59F1CFB207D3CD100B16220 /* RemoteBlobStore.swift */,
@@ -129,6 +138,9 @@
 				B5A5353C207D44BF00D9E3D2 /* LocalBlobStoreTests.swift */,
 				B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */,
 				B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */,
+				B5A53554207EC22C00D9E3D2 /* DataEncryptorTests.swift */,
+				B5A53550207EC1FD00D9E3D2 /* encrypt_private_key.pem */,
+				B5A53551207EC1FD00D9E3D2 /* encrypt_public_key.der */,
 				B59F1CF0207C2E2900B16220 /* Info.plist */,
 			);
 			path = BlobStoreTests;
@@ -162,6 +174,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B545EF26207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h in Headers */,
 				B5A53549207E9AE000D9E3D2 /* DataEncryptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +238,7 @@
 					};
 					B59F1CE8207C2E2900B16220 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +274,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A53553207EC1FD00D9E3D2 /* encrypt_public_key.der in Resources */,
+				B5A53552207EC1FD00D9E3D2 /* encrypt_private_key.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +362,7 @@
 			files = (
 				B5A53541207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift in Sources */,
 				B5A5353F207D44C000D9E3D2 /* LocalBlobStoreTests.swift in Sources */,
+				B5A53555207EC22C00D9E3D2 /* DataEncryptorTests.swift in Sources */,
 				B5A53540207D44C000D9E3D2 /* SmartBlobStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.BlobStore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BlobStore/BlobStore-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -518,6 +536,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.BlobStore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BlobStore/BlobStore-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
