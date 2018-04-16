@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B331E76A45A50FFC94E18406 /* Pods_BlobStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24798EC5FB474A994945D150 /* Pods_BlobStore.framework */; };
 		B545EF26207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B545EF25207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h */; };
+		B54C705620803BF20053A527 /* BrickUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C705520803BF10053A527 /* BrickUploader.swift */; };
+		B54C705820803C0B0053A527 /* BrickUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C705720803C0B0053A527 /* BrickUploaderTests.swift */; };
 		B59F1CEA207C2E2900B16220 /* BlobStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F1CE0207C2E2900B16220 /* BlobStore.framework */; };
 		B59F1CFF207D3CD200B16220 /* SmartBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFA207D3CD100B16220 /* SmartBlobStore.swift */; };
 		B59F1D00207D3CD200B16220 /* RemoteBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFB207D3CD100B16220 /* RemoteBlobStore.swift */; };
@@ -43,6 +45,8 @@
 		38B57FDB199D9580B7088531 /* Pods_BlobStoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlobStoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7479CB41E87A2F544B7F5 /* Pods-BlobStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStoreTests/Pods-BlobStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B545EF25207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlobStore-Bridging-Header.h"; sourceTree = "<group>"; };
+		B54C705520803BF10053A527 /* BrickUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickUploader.swift; sourceTree = "<group>"; };
+		B54C705720803C0B0053A527 /* BrickUploaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickUploaderTests.swift; sourceTree = "<group>"; };
 		B59F1CE0207C2E2900B16220 /* BlobStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlobStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F1CE4207C2E2900B16220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59F1CE9207C2E2900B16220 /* BlobStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlobStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,11 +100,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B54C705420803BF10053A527 /* BrickFTP Uploader */ = {
+			isa = PBXGroup;
+			children = (
+				B54C705520803BF10053A527 /* BrickUploader.swift */,
+			);
+			path = "BrickFTP Uploader";
+			sourceTree = "<group>";
+		};
 		B59F1CD6207C2E2900B16220 = {
 			isa = PBXGroup;
 			children = (
 				B5A53544207D7CDA00D9E3D2 /* LICENSE */,
 				B59F1CE2207C2E2900B16220 /* BlobStore */,
+				B54C705420803BF10053A527 /* BrickFTP Uploader */,
 				B59F1CED207C2E2900B16220 /* BlobStoreTests */,
 				B5A53545207E9AE000D9E3D2 /* DataEncryptor */,
 				B59F1CE1207C2E2900B16220 /* Products */,
@@ -141,6 +154,7 @@
 				B5A53554207EC22C00D9E3D2 /* DataEncryptorTests.swift */,
 				B5A53550207EC1FD00D9E3D2 /* encrypt_private_key.pem */,
 				B5A53551207EC1FD00D9E3D2 /* encrypt_public_key.der */,
+				B54C705720803C0B0053A527 /* BrickUploaderTests.swift */,
 				B59F1CF0207C2E2900B16220 /* Info.plist */,
 			);
 			path = BlobStoreTests;
@@ -353,6 +367,7 @@
 				B59F1CFF207D3CD200B16220 /* SmartBlobStore.swift in Sources */,
 				B5A5354B207E9AE000D9E3D2 /* DataEncryptor.m in Sources */,
 				B59F1D03207D3CD200B16220 /* RemoteCachingBlobStore.swift in Sources */,
+				B54C705620803BF20053A527 /* BrickUploader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +378,7 @@
 				B5A53541207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift in Sources */,
 				B5A5353F207D44C000D9E3D2 /* LocalBlobStoreTests.swift in Sources */,
 				B5A53555207EC22C00D9E3D2 /* DataEncryptorTests.swift in Sources */,
+				B54C705820803C0B0053A527 /* BrickUploaderTests.swift in Sources */,
 				B5A53540207D44C000D9E3D2 /* SmartBlobStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
