@@ -6,13 +6,12 @@
 //  Copyright © 2018 Kashoo Cloud Accounting Inc. All rights reserved.
 //
 
-import AFNetworking
+import Alamofire
 
 class BrickUploader {
-    private var networkAgent: NetworkAgent
+    private var sessionManager: SessionManager
     private var brickAPIKey: String
     private var brickBaseURL: URL
-    private let queue = OperationQueue()
     private var abortion = false
 
     /// A callback for monitoring upload progress (optional).
@@ -26,10 +25,10 @@ class BrickUploader {
     /// - parameter baseURL: The base URL for the remote BrickFTP server.
     /// - parameter apiKey: The BrickFTP API key.
     ///
-    init(with agent: NetworkAgent,
+    init(with manager: SessionManager,
          baseURL: String,
          apiKey: String) {
-        networkAgent = agent
+        sessionManager = manager
         brickBaseURL = URL(string: baseURL + "/api/rest/v1/files")!
         brickAPIKey = apiKey
     }
@@ -126,9 +125,9 @@ class BrickUploader {
     /// Abort an upload in progress.
     ///
     func abort() {
-        KashooActivityLog.shared().logString("Brick upload aborted.", toConsole: true)
+        print("Brick upload aborted.")
         abortion = true
-        queue.cancelAllOperations()
+        sessionManager.session.invalidateAndCancel()
     }
     
     // MARK: - Networking calls
@@ -192,15 +191,16 @@ class BrickUploader {
             request.allHTTPHeaderFields = upload.headers
             request.httpBody = data.subdata(in: range)
             
-            let operation = AFHTTPRequestOperation(request: request)
-            operation.setCompletionBlockWithSuccess({ (operation, object) in
-                completion(.bytesSent(upload, range))
-            }, failure: { (operation, error) in
-                completion(.error(error))
-            })
+            sessionManager.request(request)
+                .responseData { response in
+                    if let error = response.result.error {
+                        completion(.error(error))
+                    } else {
+                        completion(.bytesSent(upload, range))
+                    }
+            }
             
-            KashooActivityLog.shared().logString("Brick uploading file body (offset \(range.lowerBound), length \(range.count)) to \(url.absoluteString)", toConsole: true)
-            queue.addOperation(operation)
+            print("Brick uploading file body (offset \(range.lowerBound), length \(range.count)) to \(url.absoluteString)")
         } catch {
             completion(.error(error))
         }
@@ -239,24 +239,21 @@ class BrickUploader {
             "Authorization" : "Basic " + (brickAPIKey + ":x").data(using: .utf8)!.base64EncodedString(), // https://developers.brickftp.com/#starting-a-new-upload
             "Content-Type": "application/json",
             "Accept": "application/json",
-            ].merging(networkAgent.applicationHeadersForHTTPRequest()) { (current, _) in return current }
+            ]
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
         request.httpBody = try! JSONSerialization.data(withJSONObject: body, options: [])
-        request.timeoutInterval = TimeInterval(UserDefaults.standard.float(forKey: kNetworkConnectionTimeoutUserDefaultsKey))
         
-        let operation = AFHTTPRequestOperation(request: request)
-        operation.setCompletionBlockWithSuccess({ (operation, object) in
-            KashooActivityLog.shared().logOperation(operation, name: title)
-            completion(object as? Data, nil)
-        }, failure: { (operation, error) in
-            KashooActivityLog.shared().logOperation(operation, name: title)
-            completion(nil, error)
-        })
-        
-        queue.addOperation(operation)
+        sessionManager.request(request)
+            .responseData { response in
+                if let error = response.result.error {
+                    completion(nil, error)
+                } else {
+                    completion(response.data, nil)
+                }
+        }
     }    
 
     /// Transform a potential error to `nil` if it indicates a user-initiated cancellation.

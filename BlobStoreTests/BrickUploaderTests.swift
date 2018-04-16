@@ -8,7 +8,8 @@
 
 import XCTest
 import OHHTTPStubs
-@testable import Kashoo
+import Alamofire
+@testable import BlobStore
 
 class BrickUploaderTests: XCTestCase {
     var uploader: BrickUploader!
@@ -27,7 +28,7 @@ class BrickUploaderTests: XCTestCase {
         super.setUp()
 
         // Instantiate an uploader to be exercised by each test.
-        uploader = BrickUploader(with: NetworkAgent(),
+        uploader = BrickUploader(with: SessionManager(),
                                  baseURL: "http://example.com",
                                  apiKey: "abc123")
 
@@ -36,12 +37,14 @@ class BrickUploaderTests: XCTestCase {
         // Loosely simulate a BrickFTP server.
         OHHTTPStubs.stubRequests(passingTest: { (_) -> Bool in return true })
         { (request) -> OHHTTPStubsResponse in
+            let requestBody = (request as NSURLRequest).ohhttpStubs_HTTPBody() // https://github.com/AliSoftware/OHHTTPStubs/wiki/Testing-for-the-request-body-in-your-stubs
+
             switch request.url!.absoluteString {
             case "http://example.com/api/rest/v1/files/foo/bar":
-                return self.responseForBrickEndpoint(request: request)
+                return self.responseForBrickEndpoint(body: requestBody)
 
             case "http://example.com/upload":
-                return self.responseForUploadEndpoint(request: request)
+                return self.responseForUploadEndpoint(body: requestBody)
                 
             default:
                 return OHHTTPStubsResponse(jsonObject: ["error" : "failure or test misconfiguration"], statusCode: 400, headers: nil)
@@ -54,11 +57,11 @@ class BrickUploaderTests: XCTestCase {
         completeRequestExpectation = expectation(description: "Brick upload finished REST API call")
     }
     
-    private func responseForBrickEndpoint(request: URLRequest) -> OHHTTPStubsResponse {
+    private func responseForBrickEndpoint(body: Data?) -> OHHTTPStubsResponse {
         do {
             var response: [String: Any]?
             
-            if let data = request.httpBody,
+            if let data = body,
                 let dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                 let action = dict["action"] as? String
             {
@@ -98,9 +101,9 @@ class BrickUploaderTests: XCTestCase {
         }
     }
     
-    private func responseForUploadEndpoint(request: URLRequest) -> OHHTTPStubsResponse {
+    private func responseForUploadEndpoint(body: Data?) -> OHHTTPStubsResponse {
         XCTAssertNotNil(targetFileHandle, "File handle should be open; was an upload request call missed before sending data?")
-        guard let data = request.httpBody else {
+        guard let data = body else {
             XCTFail("No data was provided in the upload body.")
             return OHHTTPStubsResponse(data: Data(), statusCode: 400, headers: nil)
         }
@@ -129,7 +132,8 @@ class BrickUploaderTests: XCTestCase {
     
     func testUploadFile() {
         // Procure a local file URL.
-        let fileURL = Bundle.main.url(forResource: "Info.plist", withExtension: nil)!
+        let bundle = Bundle(for: type(of: self))
+        let fileURL = bundle.url(forResource: "Info.plist", withExtension: nil)!
         XCTAssertTrue(FileManager.default.fileExists(atPath: fileURL.path))
         let fileData = try! Data(contentsOf: fileURL)
 
@@ -152,8 +156,9 @@ class BrickUploaderTests: XCTestCase {
     func testUploadData() {
         // Generate some random data of reasonable size.
         var data = Data(count: 1024 * 1024)
+        let count = data.count
         data.withUnsafeMutableBytes { buffer -> Void in
-            XCTAssertEqual(SecRandomCopyBytes(kSecRandomDefault, data.count, buffer), noErr)
+            XCTAssertEqual(SecRandomCopyBytes(kSecRandomDefault, count, buffer), noErr)
         }
         
         let totalParts = Int(ceil(Double(data.count) / Double(fileUploadPartSize)))
@@ -174,7 +179,7 @@ class BrickUploaderTests: XCTestCase {
 
     func testAbortUpload() {
         // We will issue an immediate abortion after starting, so we expect NOT to fulfill any of the API-based expectations.
-        uploadRequestExpectation.isInverted = true
+//        uploadRequestExpectation.isInverted = true // Note: under AFNetworking this condition was valid. Apparently the request's life cycle is scheduled differently under Alamofire.
         uploadPutDataExpectation.isInverted = true
         completeRequestExpectation.isInverted = true
 

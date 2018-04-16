@@ -7,6 +7,7 @@ target 'BlobStore' do
   target 'BlobStoreTests' do
     inherit! :search_paths
     pod 'Mockingjay'
+    pod 'OHHTTPStubs'
   end
 
 end
