@@ -1,12 +1,5 @@
 PODS:
   - Alamofire (4.7.1)
-  - Mockingjay (2.0.1):
-    - Mockingjay/Core (= 2.0.1)
-    - Mockingjay/XCTest (= 2.0.1)
-  - Mockingjay/Core (2.0.1):
-    - URITemplate (~> 2.0)
-  - Mockingjay/XCTest (2.0.1):
-    - Mockingjay/Core
   - OHHTTPStubs (6.1.0):
     - OHHTTPStubs/Default (= 6.1.0)
   - OHHTTPStubs/Core (6.1.0)
@@ -20,26 +13,20 @@ PODS:
   - OHHTTPStubs/NSURLSession (6.1.0):
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (6.1.0)
-  - URITemplate (2.0.3)
 
 DEPENDENCIES:
   - Alamofire
-  - Mockingjay
   - OHHTTPStubs
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - Mockingjay
     - OHHTTPStubs
-    - URITemplate
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
-  Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
-  URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: 122090f53ecd57731f157948460a45e08c2181bd
+PODFILE CHECKSUM: 33f4ee9b9bfbf19d4e3f75eb9f3f038d6b74d5d3
 
 COCOAPODS: 1.5.0

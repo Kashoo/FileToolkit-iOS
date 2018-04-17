@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Mockingjay
 import Alamofire
 @testable import BlobStore
 
@@ -27,9 +26,6 @@ class SmartBlobStoreTests: XCTestCase {
 
         // Disable asynchronous remote storage so that we can properly control the life cycle of operations for the tests.
         blobStore.completesImmediatelyAfterLocalStore = false
-
-        // Stub all remote network requests with a success response so as to allow exercising of the local cache management.
-        stub(everything, http(200, headers: [:], download: nil))
     }
     
     override func tearDown() {

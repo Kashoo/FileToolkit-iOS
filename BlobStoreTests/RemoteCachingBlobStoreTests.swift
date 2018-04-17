@@ -8,7 +8,6 @@
 
 import XCTest
 import Alamofire
-import Mockingjay
 @testable import BlobStore
 
 class RemoteCachingBlobStoreTests: XCTestCase {
@@ -21,9 +20,6 @@ class RemoteCachingBlobStoreTests: XCTestCase {
                                            remoteStoreBaseURL: URL(string: "http://blobstore.example.com")!,
                                            cacheDirectoryURL: URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("blob.test.remote"),
                                            cachePruningInterval: 0)
-        
-        // Stub all remote network requests with a success response.
-        stub(everything, http(200, headers: [:], download: nil))
     }
     
     override func tearDown() {
