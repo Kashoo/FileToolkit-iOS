@@ -1,6 +1,6 @@
 //
 //  RemoteCachingBlobStoreTests.swift
-//  BlobStoreTests
+//  FileToolkitTests
 //
 //  Copyright 2013 Kashoo Cloud Accounting Inc.
 //  Copyright 2018 Kashoo Systems Inc.
@@ -8,7 +8,7 @@
 
 import XCTest
 import Alamofire
-@testable import BlobStore
+@testable import FileToolkit
 
 class RemoteCachingBlobStoreTests: XCTestCase {
     

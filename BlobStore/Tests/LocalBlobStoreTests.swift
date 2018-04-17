@@ -1,13 +1,13 @@
 //
 //  LocalBlobStoreTests.swift
-//  BlobStoreTests
+//  FileToolkitTests
 //
 //  Copyright 2013 Kashoo Cloud Accounting Inc.
 //  Copyright 2018 Kashoo Systems Inc.
 //
 
 import XCTest
-@testable import BlobStore
+@testable import FileToolkit
 
 class LocalBlobStoreTests: XCTestCase {
 

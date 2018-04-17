@@ -1,10 +1,10 @@
 platform :ios, '10.3'
 
-target 'BlobStore' do
+target 'FileToolkit' do
   use_frameworks!
   pod 'Alamofire'
 
-  target 'BlobStoreTests' do
+  target 'FileToolkitTests' do
     inherit! :search_paths
     pod 'OHHTTPStubs'
   end

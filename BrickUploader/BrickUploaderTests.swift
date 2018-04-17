@@ -9,7 +9,7 @@
 import XCTest
 import OHHTTPStubs
 import Alamofire
-@testable import BlobStore
+@testable import FileToolkit
 
 class BrickUploaderTests: XCTestCase {
     var uploader: BrickUploader!

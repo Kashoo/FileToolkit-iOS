@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B331E76A45A50FFC94E18406 /* Pods_BlobStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24798EC5FB474A994945D150 /* Pods_BlobStore.framework */; };
-		B545EF26207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B545EF25207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h */; };
+		18AE1119426A0BBCF1976C68 /* Pods_FileToolkitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF76A139C1BA27B6F6777688 /* Pods_FileToolkitTests.framework */; };
+		305799D671C9003C52B32EB7 /* Pods_FileToolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46DDA0024077689656D97F4 /* Pods_FileToolkit.framework */; };
+		B545EF26207EC47B00A2B9C0 /* FileToolkit-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B545EF25207EC47B00A2B9C0 /* FileToolkit-Bridging-Header.h */; };
 		B54C705620803BF20053A527 /* BrickUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C705520803BF10053A527 /* BrickUploader.swift */; };
-		B54C705820803C0B0053A527 /* BrickUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C705720803C0B0053A527 /* BrickUploaderTests.swift */; };
-		B59F1CEA207C2E2900B16220 /* BlobStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F1CE0207C2E2900B16220 /* BlobStore.framework */; };
+		B576369E2086AE730085A12E /* LocalBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353C207D44BF00D9E3D2 /* LocalBlobStoreTests.swift */; };
+		B57636A02086AE7C0085A12E /* RemoteCachingBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */; };
+		B57636A12086AE7C0085A12E /* SmartBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */; };
+		B57636A22086AE7C0085A12E /* BrickUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C705720803C0B0053A527 /* BrickUploaderTests.swift */; };
+		B59F1CEA207C2E2900B16220 /* FileToolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F1CE0207C2E2900B16220 /* FileToolkit.framework */; };
 		B59F1CFF207D3CD200B16220 /* SmartBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFA207D3CD100B16220 /* SmartBlobStore.swift */; };
 		B59F1D00207D3CD200B16220 /* RemoteBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFB207D3CD100B16220 /* RemoteBlobStore.swift */; };
 		B59F1D01207D3CD200B16220 /* LocalBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFC207D3CD100B16220 /* LocalBlobStore.swift */; };
 		B59F1D02207D3CD200B16220 /* BlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFD207D3CD100B16220 /* BlobStore.swift */; };
 		B59F1D03207D3CD200B16220 /* RemoteCachingBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFE207D3CD200B16220 /* RemoteCachingBlobStore.swift */; };
-		B5A5353F207D44C000D9E3D2 /* LocalBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353C207D44BF00D9E3D2 /* LocalBlobStoreTests.swift */; };
-		B5A53540207D44C000D9E3D2 /* SmartBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */; };
-		B5A53541207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */; };
 		B5A53549207E9AE000D9E3D2 /* DataEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5A5354A207E9AE000D9E3D2 /* DataDecryptor.sh in Resources */ = {isa = PBXBuildFile; fileRef = B5A53547207E9AE000D9E3D2 /* DataDecryptor.sh */; };
 		B5A5354B207E9AE000D9E3D2 /* DataEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A53548207E9AE000D9E3D2 /* DataEncryptor.m */; };
 		B5A53552207EC1FD00D9E3D2 /* encrypt_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5A53550207EC1FD00D9E3D2 /* encrypt_private_key.pem */; };
 		B5A53553207EC1FD00D9E3D2 /* encrypt_public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = B5A53551207EC1FD00D9E3D2 /* encrypt_public_key.der */; };
-		B5A53555207EC22C00D9E3D2 /* DataEncryptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A53554207EC22C00D9E3D2 /* DataEncryptorTests.swift */; };
-		EF2F1C42A4601E200D7B7534 /* Pods_BlobStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B57FDB199D9580B7088531 /* Pods_BlobStoreTests.framework */; };
+		B5D1E2B22086A5860006EBDD /* DataEncryptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A53554207EC22C00D9E3D2 /* DataEncryptorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,14 +43,17 @@
 		12B9AE49FFC6D82AF78B9881 /* Pods-BlobStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStore/Pods-BlobStore.release.xcconfig"; sourceTree = "<group>"; };
 		24798EC5FB474A994945D150 /* Pods_BlobStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlobStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B57FDB199D9580B7088531 /* Pods_BlobStoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlobStoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		449C12883EC76BB71A8A7154 /* Pods-FileToolkitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileToolkitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FileToolkitTests/Pods-FileToolkitTests.release.xcconfig"; sourceTree = "<group>"; };
+		53E8C30964DAD57264CEEE19 /* Pods-FileToolkitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileToolkitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FileToolkitTests/Pods-FileToolkitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		78B7479CB41E87A2F544B7F5 /* Pods-BlobStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStoreTests/Pods-BlobStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B545EF25207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlobStore-Bridging-Header.h"; sourceTree = "<group>"; };
+		A46DDA0024077689656D97F4 /* Pods_FileToolkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FileToolkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B545EF25207EC47B00A2B9C0 /* FileToolkit-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FileToolkit-Bridging-Header.h"; sourceTree = "<group>"; };
 		B54C705520803BF10053A527 /* BrickUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickUploader.swift; sourceTree = "<group>"; };
 		B54C705720803C0B0053A527 /* BrickUploaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickUploaderTests.swift; sourceTree = "<group>"; };
-		B59F1CE0207C2E2900B16220 /* BlobStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlobStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B59F1CE4207C2E2900B16220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B59F1CE9207C2E2900B16220 /* BlobStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlobStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B59F1CF0207C2E2900B16220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B59F1CE0207C2E2900B16220 /* FileToolkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileToolkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59F1CE4207C2E2900B16220 /* FileToolkit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FileToolkit-Info.plist"; sourceTree = "<group>"; };
+		B59F1CE9207C2E2900B16220 /* FileToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59F1CF0207C2E2900B16220 /* FileToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FileToolkitTests-Info.plist"; sourceTree = "<group>"; };
 		B59F1CFA207D3CD100B16220 /* SmartBlobStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartBlobStore.swift; sourceTree = "<group>"; };
 		B59F1CFB207D3CD100B16220 /* RemoteBlobStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteBlobStore.swift; sourceTree = "<group>"; };
 		B59F1CFC207D3CD100B16220 /* LocalBlobStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalBlobStore.swift; sourceTree = "<group>"; };
@@ -66,8 +69,11 @@
 		B5A53550207EC1FD00D9E3D2 /* encrypt_private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = encrypt_private_key.pem; sourceTree = "<group>"; };
 		B5A53551207EC1FD00D9E3D2 /* encrypt_public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = encrypt_public_key.der; sourceTree = "<group>"; };
 		B5A53554207EC22C00D9E3D2 /* DataEncryptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncryptorTests.swift; sourceTree = "<group>"; };
+		E21F357EB92D36012323BB35 /* Pods-FileToolkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileToolkit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FileToolkit/Pods-FileToolkit.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CFCD4988E7E9FDA951BD00 /* Pods-BlobStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStoreTests/Pods-BlobStoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		EF76A139C1BA27B6F6777688 /* Pods_FileToolkitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FileToolkitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26A12A7E043C43FEE20D064 /* Pods-BlobStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlobStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlobStore/Pods-BlobStore.debug.xcconfig"; sourceTree = "<group>"; };
+		F8868EAB8139B2038C55F973 /* Pods-FileToolkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileToolkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-FileToolkit/Pods-FileToolkit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B331E76A45A50FFC94E18406 /* Pods_BlobStore.framework in Frameworks */,
+				305799D671C9003C52B32EB7 /* Pods_FileToolkit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,8 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59F1CEA207C2E2900B16220 /* BlobStore.framework in Frameworks */,
-				EF2F1C42A4601E200D7B7534 /* Pods_BlobStoreTests.framework in Frameworks */,
+				B59F1CEA207C2E2900B16220 /* FileToolkit.framework in Frameworks */,
+				18AE1119426A0BBCF1976C68 /* Pods_FileToolkitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,25 +102,30 @@
 			children = (
 				24798EC5FB474A994945D150 /* Pods_BlobStore.framework */,
 				38B57FDB199D9580B7088531 /* Pods_BlobStoreTests.framework */,
+				A46DDA0024077689656D97F4 /* Pods_FileToolkit.framework */,
+				EF76A139C1BA27B6F6777688 /* Pods_FileToolkitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B54C705420803BF10053A527 /* BrickFTP Uploader */ = {
+		B54C705420803BF10053A527 /* BrickUploader */ = {
 			isa = PBXGroup;
 			children = (
 				B54C705520803BF10053A527 /* BrickUploader.swift */,
+				B54C705720803C0B0053A527 /* BrickUploaderTests.swift */,
 			);
-			path = "BrickFTP Uploader";
+			path = BrickUploader;
 			sourceTree = "<group>";
 		};
 		B59F1CD6207C2E2900B16220 = {
 			isa = PBXGroup;
 			children = (
 				B5A53544207D7CDA00D9E3D2 /* LICENSE */,
+				B59F1CE4207C2E2900B16220 /* FileToolkit-Info.plist */,
+				B545EF25207EC47B00A2B9C0 /* FileToolkit-Bridging-Header.h */,
+				B59F1CF0207C2E2900B16220 /* FileToolkitTests-Info.plist */,
 				B59F1CE2207C2E2900B16220 /* BlobStore */,
-				B54C705420803BF10053A527 /* BrickFTP Uploader */,
-				B59F1CED207C2E2900B16220 /* BlobStoreTests */,
+				B54C705420803BF10053A527 /* BrickUploader */,
 				B5A53545207E9AE000D9E3D2 /* DataEncryptor */,
 				B59F1CE1207C2E2900B16220 /* Products */,
 				CD8D23832A4F55BE57120722 /* Pods */,
@@ -125,8 +136,8 @@
 		B59F1CE1207C2E2900B16220 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B59F1CE0207C2E2900B16220 /* BlobStore.framework */,
-				B59F1CE9207C2E2900B16220 /* BlobStoreTests.xctest */,
+				B59F1CE0207C2E2900B16220 /* FileToolkit.framework */,
+				B59F1CE9207C2E2900B16220 /* FileToolkitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,30 +145,24 @@
 		B59F1CE2207C2E2900B16220 /* BlobStore */ = {
 			isa = PBXGroup;
 			children = (
-				B59F1CE4207C2E2900B16220 /* Info.plist */,
-				B545EF25207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h */,
 				B59F1CFD207D3CD100B16220 /* BlobStore.swift */,
 				B59F1CFC207D3CD100B16220 /* LocalBlobStore.swift */,
 				B59F1CFB207D3CD100B16220 /* RemoteBlobStore.swift */,
 				B59F1CFE207D3CD200B16220 /* RemoteCachingBlobStore.swift */,
 				B59F1CFA207D3CD100B16220 /* SmartBlobStore.swift */,
+				B5D1E2B02086A55D0006EBDD /* Tests */,
 			);
 			path = BlobStore;
 			sourceTree = "<group>";
 		};
-		B59F1CED207C2E2900B16220 /* BlobStoreTests */ = {
+		B59F1CED207C2E2900B16220 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B5A5353C207D44BF00D9E3D2 /* LocalBlobStoreTests.swift */,
-				B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */,
-				B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */,
 				B5A53554207EC22C00D9E3D2 /* DataEncryptorTests.swift */,
 				B5A53550207EC1FD00D9E3D2 /* encrypt_private_key.pem */,
 				B5A53551207EC1FD00D9E3D2 /* encrypt_public_key.der */,
-				B54C705720803C0B0053A527 /* BrickUploaderTests.swift */,
-				B59F1CF0207C2E2900B16220 /* Info.plist */,
 			);
-			path = BlobStoreTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		B5A53545207E9AE000D9E3D2 /* DataEncryptor */ = {
@@ -166,8 +171,19 @@
 				B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */,
 				B5A53548207E9AE000D9E3D2 /* DataEncryptor.m */,
 				B5A53547207E9AE000D9E3D2 /* DataDecryptor.sh */,
+				B59F1CED207C2E2900B16220 /* Tests */,
 			);
 			path = DataEncryptor;
+			sourceTree = "<group>";
+		};
+		B5D1E2B02086A55D0006EBDD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B5A5353C207D44BF00D9E3D2 /* LocalBlobStoreTests.swift */,
+				B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */,
+				B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		CD8D23832A4F55BE57120722 /* Pods */ = {
@@ -177,6 +193,10 @@
 				12B9AE49FFC6D82AF78B9881 /* Pods-BlobStore.release.xcconfig */,
 				78B7479CB41E87A2F544B7F5 /* Pods-BlobStoreTests.debug.xcconfig */,
 				E6CFCD4988E7E9FDA951BD00 /* Pods-BlobStoreTests.release.xcconfig */,
+				E21F357EB92D36012323BB35 /* Pods-FileToolkit.debug.xcconfig */,
+				F8868EAB8139B2038C55F973 /* Pods-FileToolkit.release.xcconfig */,
+				53E8C30964DAD57264CEEE19 /* Pods-FileToolkitTests.debug.xcconfig */,
+				449C12883EC76BB71A8A7154 /* Pods-FileToolkitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -188,7 +208,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B545EF26207EC47B00A2B9C0 /* BlobStore-Bridging-Header.h in Headers */,
+				B545EF26207EC47B00A2B9C0 /* FileToolkit-Bridging-Header.h in Headers */,
 				B5A53549207E9AE000D9E3D2 /* DataEncryptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,9 +216,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B59F1CDF207C2E2900B16220 /* BlobStore */ = {
+		B59F1CDF207C2E2900B16220 /* FileToolkit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B59F1CF4207C2E2900B16220 /* Build configuration list for PBXNativeTarget "BlobStore" */;
+			buildConfigurationList = B59F1CF4207C2E2900B16220 /* Build configuration list for PBXNativeTarget "FileToolkit" */;
 			buildPhases = (
 				3DF77CF785EF8BB0530A98E8 /* [CP] Check Pods Manifest.lock */,
 				B59F1CDB207C2E2900B16220 /* Sources */,
@@ -210,14 +230,14 @@
 			);
 			dependencies = (
 			);
-			name = BlobStore;
+			name = FileToolkit;
 			productName = BlobStore;
-			productReference = B59F1CE0207C2E2900B16220 /* BlobStore.framework */;
+			productReference = B59F1CE0207C2E2900B16220 /* FileToolkit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B59F1CE8207C2E2900B16220 /* BlobStoreTests */ = {
+		B59F1CE8207C2E2900B16220 /* FileToolkitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B59F1CF7207C2E2900B16220 /* Build configuration list for PBXNativeTarget "BlobStoreTests" */;
+			buildConfigurationList = B59F1CF7207C2E2900B16220 /* Build configuration list for PBXNativeTarget "FileToolkitTests" */;
 			buildPhases = (
 				8E586A7FD7D9886F0A55F49F /* [CP] Check Pods Manifest.lock */,
 				B59F1CE5207C2E2900B16220 /* Sources */,
@@ -230,9 +250,9 @@
 			dependencies = (
 				B59F1CEC207C2E2900B16220 /* PBXTargetDependency */,
 			);
-			name = BlobStoreTests;
+			name = FileToolkitTests;
 			productName = BlobStoreTests;
-			productReference = B59F1CE9207C2E2900B16220 /* BlobStoreTests.xctest */;
+			productReference = B59F1CE9207C2E2900B16220 /* FileToolkitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -257,7 +277,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B59F1CDA207C2E2900B16220 /* Build configuration list for PBXProject "BlobStore" */;
+			buildConfigurationList = B59F1CDA207C2E2900B16220 /* Build configuration list for PBXProject "FileToolkit" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -269,8 +289,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B59F1CDF207C2E2900B16220 /* BlobStore */,
-				B59F1CE8207C2E2900B16220 /* BlobStoreTests */,
+				B59F1CDF207C2E2900B16220 /* FileToolkit */,
+				B59F1CE8207C2E2900B16220 /* FileToolkitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +327,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BlobStore-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FileToolkit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -320,7 +340,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BlobStoreTests/Pods-BlobStoreTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FileToolkitTests/Pods-FileToolkitTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
@@ -331,7 +351,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlobStoreTests/Pods-BlobStoreTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FileToolkitTests/Pods-FileToolkitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8E586A7FD7D9886F0A55F49F /* [CP] Check Pods Manifest.lock */ = {
@@ -345,7 +365,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BlobStoreTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FileToolkitTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -373,11 +393,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5A53541207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift in Sources */,
-				B5A5353F207D44C000D9E3D2 /* LocalBlobStoreTests.swift in Sources */,
-				B5A53555207EC22C00D9E3D2 /* DataEncryptorTests.swift in Sources */,
-				B54C705820803C0B0053A527 /* BrickUploaderTests.swift in Sources */,
-				B5A53540207D44C000D9E3D2 /* SmartBlobStoreTests.swift in Sources */,
+				B57636A02086AE7C0085A12E /* RemoteCachingBlobStoreTests.swift in Sources */,
+				B576369E2086AE730085A12E /* LocalBlobStoreTests.swift in Sources */,
+				B57636A12086AE7C0085A12E /* SmartBlobStoreTests.swift in Sources */,
+				B57636A22086AE7C0085A12E /* BrickUploaderTests.swift in Sources */,
+				B5D1E2B22086A5860006EBDD /* DataEncryptorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +406,7 @@
 /* Begin PBXTargetDependency section */
 		B59F1CEC207C2E2900B16220 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B59F1CDF207C2E2900B16220 /* BlobStore */;
+			target = B59F1CDF207C2E2900B16220 /* FileToolkit */;
 			targetProxy = B59F1CEB207C2E2900B16220 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -511,7 +531,7 @@
 		};
 		B59F1CF5207C2E2900B16220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F26A12A7E043C43FEE20D064 /* Pods-BlobStore.debug.xcconfig */;
+			baseConfigurationReference = E21F357EB92D36012323BB35 /* Pods-FileToolkit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -520,13 +540,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BlobStore/Info.plist;
+				INFOPLIST_FILE = "FileToolkit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.BlobStore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.FileToolkit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "BlobStore/BlobStore-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FileToolkit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -535,7 +555,7 @@
 		};
 		B59F1CF6207C2E2900B16220 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12B9AE49FFC6D82AF78B9881 /* Pods-BlobStore.release.xcconfig */;
+			baseConfigurationReference = F8868EAB8139B2038C55F973 /* Pods-FileToolkit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -544,13 +564,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BlobStore/Info.plist;
+				INFOPLIST_FILE = "FileToolkit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.BlobStore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.FileToolkit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "BlobStore/BlobStore-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FileToolkit-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -558,12 +578,12 @@
 		};
 		B59F1CF8207C2E2900B16220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78B7479CB41E87A2F544B7F5 /* Pods-BlobStoreTests.debug.xcconfig */;
+			baseConfigurationReference = 53E8C30964DAD57264CEEE19 /* Pods-FileToolkitTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BlobStoreTests/Info.plist;
+				INFOPLIST_FILE = "FileToolkitTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.BlobStoreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.FileToolkitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,12 +592,12 @@
 		};
 		B59F1CF9207C2E2900B16220 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6CFCD4988E7E9FDA951BD00 /* Pods-BlobStoreTests.release.xcconfig */;
+			baseConfigurationReference = 449C12883EC76BB71A8A7154 /* Pods-FileToolkitTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BlobStoreTests/Info.plist;
+				INFOPLIST_FILE = "FileToolkitTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.BlobStoreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashoo.ios.FileToolkitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -587,7 +607,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B59F1CDA207C2E2900B16220 /* Build configuration list for PBXProject "BlobStore" */ = {
+		B59F1CDA207C2E2900B16220 /* Build configuration list for PBXProject "FileToolkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B59F1CF2207C2E2900B16220 /* Debug */,
@@ -596,7 +616,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B59F1CF4207C2E2900B16220 /* Build configuration list for PBXNativeTarget "BlobStore" */ = {
+		B59F1CF4207C2E2900B16220 /* Build configuration list for PBXNativeTarget "FileToolkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B59F1CF5207C2E2900B16220 /* Debug */,
@@ -605,7 +625,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B59F1CF7207C2E2900B16220 /* Build configuration list for PBXNativeTarget "BlobStoreTests" */ = {
+		B59F1CF7207C2E2900B16220 /* Build configuration list for PBXNativeTarget "FileToolkitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B59F1CF8207C2E2900B16220 /* Debug */,

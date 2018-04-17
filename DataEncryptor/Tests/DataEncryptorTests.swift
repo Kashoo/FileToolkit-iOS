@@ -1,13 +1,13 @@
 //
 //  DataEncryptorTests.swift
-//  BlobStoreTests
+//  FileToolkitTests
 //
 //  Created by Ben Kennedy on 2018-04-11.
 //  Copyright © 2018 Kashoo Systems Inc. All rights reserved.
 //
 
 import XCTest
-@testable import BlobStore
+@testable import FileToolkit
 
 class DataEncryptorTests: XCTestCase {
     
