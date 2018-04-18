@@ -96,7 +96,8 @@
              if (self.makeClickableLinks)
              {
                  // Iterate the links ('A' elements) in the HTML in order to retrieve their URLs and corresponding active link rectangles.
-                 javascript = [NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"collectLinksInHTMLDocument" withExtension:@"js"] encoding:NSUTF8StringEncoding error:nil];
+                 NSURL *javascriptURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"PDFGeneratorCollectLinksInHTML" withExtension:@"js"];
+                 javascript = [NSString stringWithContentsOfURL:javascriptURL encoding:NSUTF8StringEncoding error:nil];
              }
              else
              {

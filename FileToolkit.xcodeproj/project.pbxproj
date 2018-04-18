@@ -18,6 +18,7 @@
 		B57636A72086B2860085A12E /* PDFGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = B57636A52086B2860085A12E /* PDFGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B57636A82086B2DC0085A12E /* PDFGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B57636A42086B2860085A12E /* PDFGenerator.m */; };
 		B57636AA2086BDCF0085A12E /* PDFGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57636A92086BDCF0085A12E /* PDFGeneratorTests.swift */; };
+		B57636AE208812A70085A12E /* PDFGeneratorCollectLinksInHTML.js in Resources */ = {isa = PBXBuildFile; fileRef = B57636AD208812A70085A12E /* PDFGeneratorCollectLinksInHTML.js */; };
 		B59F1CEA207C2E2900B16220 /* FileToolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F1CE0207C2E2900B16220 /* FileToolkit.framework */; };
 		B59F1CFF207D3CD200B16220 /* SmartBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFA207D3CD100B16220 /* SmartBlobStore.swift */; };
 		B59F1D00207D3CD200B16220 /* RemoteBlobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F1CFB207D3CD100B16220 /* RemoteBlobStore.swift */; };
@@ -56,6 +57,7 @@
 		B57636A42086B2860085A12E /* PDFGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFGenerator.m; sourceTree = "<group>"; };
 		B57636A52086B2860085A12E /* PDFGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFGenerator.h; sourceTree = "<group>"; };
 		B57636A92086BDCF0085A12E /* PDFGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGeneratorTests.swift; sourceTree = "<group>"; };
+		B57636AD208812A70085A12E /* PDFGeneratorCollectLinksInHTML.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = PDFGeneratorCollectLinksInHTML.js; sourceTree = "<group>"; };
 		B59F1CE0207C2E2900B16220 /* FileToolkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileToolkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F1CE4207C2E2900B16220 /* FileToolkit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FileToolkit-Info.plist"; sourceTree = "<group>"; };
 		B59F1CE9207C2E2900B16220 /* FileToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			children = (
 				B57636A52086B2860085A12E /* PDFGenerator.h */,
 				B57636A42086B2860085A12E /* PDFGenerator.m */,
+				B57636AD208812A70085A12E /* PDFGeneratorCollectLinksInHTML.js */,
 				B57636A92086BDCF0085A12E /* PDFGeneratorTests.swift */,
 			);
 			path = PDFGenerator;
@@ -318,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B57636AE208812A70085A12E /* PDFGeneratorCollectLinksInHTML.js in Resources */,
 				B5A5354A207E9AE000D9E3D2 /* DataDecryptor.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
