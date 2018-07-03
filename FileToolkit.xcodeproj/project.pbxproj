@@ -58,6 +58,7 @@
 		B57636A52086B2860085A12E /* PDFGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFGenerator.h; sourceTree = "<group>"; };
 		B57636A92086BDCF0085A12E /* PDFGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGeneratorTests.swift; sourceTree = "<group>"; };
 		B57636AD208812A70085A12E /* PDFGeneratorCollectLinksInHTML.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = PDFGeneratorCollectLinksInHTML.js; sourceTree = "<group>"; };
+		B57636AF208814770085A12E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B59F1CE0207C2E2900B16220 /* FileToolkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileToolkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F1CE4207C2E2900B16220 /* FileToolkit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FileToolkit-Info.plist"; sourceTree = "<group>"; };
 		B59F1CE9207C2E2900B16220 /* FileToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +71,7 @@
 		B5A5353C207D44BF00D9E3D2 /* LocalBlobStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalBlobStoreTests.swift; sourceTree = "<group>"; };
 		B5A5353D207D44BF00D9E3D2 /* SmartBlobStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartBlobStoreTests.swift; sourceTree = "<group>"; };
 		B5A5353E207D44C000D9E3D2 /* RemoteCachingBlobStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteCachingBlobStoreTests.swift; sourceTree = "<group>"; };
-		B5A53544207D7CDA00D9E3D2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B5A53544207D7CDA00D9E3D2 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		B5A53546207E9AE000D9E3D2 /* DataEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEncryptor.h; sourceTree = "<group>"; };
 		B5A53547207E9AE000D9E3D2 /* DataDecryptor.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = DataDecryptor.sh; sourceTree = "<group>"; };
 		B5A53548207E9AE000D9E3D2 /* DataEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEncryptor.m; sourceTree = "<group>"; };
@@ -139,7 +140,8 @@
 		B59F1CD6207C2E2900B16220 = {
 			isa = PBXGroup;
 			children = (
-				B5A53544207D7CDA00D9E3D2 /* LICENSE */,
+				B57636AF208814770085A12E /* README.md */,
+				B5A53544207D7CDA00D9E3D2 /* LICENSE.md */,
 				B59F1CE4207C2E2900B16220 /* FileToolkit-Info.plist */,
 				B545EF25207EC47B00A2B9C0 /* FileToolkit-Bridging-Header.h */,
 				B59F1CF0207C2E2900B16220 /* FileToolkitTests-Info.plist */,
