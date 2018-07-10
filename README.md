@@ -14,8 +14,11 @@ The bulk of this code was originally written by [Ben Kennedy](https://github.com
 The included [xcworkspace](./FileToolkit.xcworkspace) provides unit tests for all projects. [CocoaPods](http://www.cocoapods.org) is required.
 
 
+<br>
 <hr>
-## <a name="BlobStore"></a>BlobStore
+
+<a name="BlobStore"></a>
+## BlobStore
 
 BlobStore provides abstract and concrete interfaces for the upload, download, and caching of arbitrary and named raw data with a remote file server.
 
@@ -29,7 +32,9 @@ See [BlobStore.swift](./BlobStore/BlobStore.swift) protocol for overview. Furthe
 
 
 <hr>
-## <a name="BrickUploader"></a>BrickUploader
+
+<a name="BrickUploader"></a>
+## BrickUploader
 
 BrickUploader coordinates the upload of data to [BrickFTP](http://www.brickftp.com) using its [REST API](https://developers.brickftp.com/#file-uploading).
 
@@ -54,8 +59,11 @@ uploader.upload(file: url, to: path) { completed, error in
 }
 ```
 
+
 <hr>
-## <a name="DataEncryptor"></a>DataEncryptor
+
+<a name="DataEncryptor"></a>
+## DataEncryptor
 
 DataEncryptor is a lightweight utility for compressing and encrypting an arbitrary payload. It employs gzip compression and AES data encryption to a piece of data using a randomly-generated and RSA asymmetrically-encrypted key.
 
@@ -76,7 +84,9 @@ Decryption and decompression is achievable using standard system tools, but Data
 
 
 <hr>
-## <a name="PDFGenerator"></a>PDFGenerator
+
+<a name="PDFGenerator"></a>
+## PDFGenerator
 
 PDFGenerator renders an HTML document as a PDF file, optionally with embedded clickable links. It will also produce a PNG representation of the first page.
 
