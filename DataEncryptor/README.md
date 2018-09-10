@@ -15,4 +15,4 @@ See notes atop [DataEncryptor.m](./DataEncryptor/DataEncryptor.m) for key setup 
 
 ## Current limitations
 
-Decryption and decompression is achievable using standard system tools, but DataEncryptor does not provide related API. This would be an obvious improvement.
+Decryption and decompression is achievable using standard Mac OS system tools, but DataEncryptor does not provide related API. This would be an obvious improvement.
